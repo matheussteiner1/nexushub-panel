@@ -4,4 +4,4 @@ Uma aplicação front-end moderna desenvolvida em React com Vite, focada em entr
 
 ## 👥 Integrantes da Dupla
 * Matheus Steiner Milleto
-* Yorai Ribeiro 
+* Yohai Ribeiro 
