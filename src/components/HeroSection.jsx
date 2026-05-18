@@ -1,38 +1,49 @@
-
-import { ArrowRight } from 'lucide-react';
-
 export default function HeroSection() {
+  const handleScrollToSection = (e, id) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="inicio" className="relative overflow-hidden bg-slate-950 pt-24 pb-20 lg:pt-32 lg:pb-28 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_45%)]" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-        <div>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
-            ✨ Nova era da gestão digital
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r flow-root from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-none">
-            Centralize suas operações tecnológicas em um só lugar.
-          </h1>
-          <p className="mt-6 text-lg text-slate-400 max-w-xl mx-auto lg:mx-0">
-            Monitore, escale e otimize toda a infraestrutura e os serviços digitais da sua empresa utilizando a plataforma do NexusHub.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <button className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-medium shadow-xl shadow-indigo-500/10 flex items-center justify-center gap-2 group transition-all">
-              Começar Agora
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="border border-slate-800 bg-slate-900/50 hover:bg-slate-900 text-slate-300 px-6 py-3 rounded-xl font-medium transition-all">
-              Agendar Demo
-            </button>
-          </div>
+    <section className="relative pt-32 pb-24 overflow-hidden bg-[#030712]">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-indigo-500/10 to-transparent blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-800 rounded-full px-4 py-1.5 text-xs text-indigo-300 font-medium mb-8 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+          Nova era da gestão digital
         </div>
-        <div className="mt-12 lg:mt-0 relative hidden lg:block">
-          <div className="w-full h-80 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 shadow-2xl flex items-center justify-center backdrop-blur-3xl">
-            <div className="text-center">
-              <span className="text-5xl font-black text-indigo-400">99.9%</span>
-              <p className="text-sm text-slate-400 mt-2 tracking-widest uppercase">Uptime Garantido</p>
-            </div>
-          </div>
+
+        <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
+          Centralize suas operações <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-indigo-200 to-slate-200">
+            tecnológicas em um só lugar.
+          </span>
+        </h1>
+
+        <p className="mt-6 text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Monitore, escale e otimize toda a infraestrutura e os serviços digitais da sua empresa utilizando a plataforma do NexusHub.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#servicos"
+            onClick={(e) => handleScrollToSection(e, 'servicos')}
+            className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200 text-center cursor-pointer transform hover:-translate-y-0.5"
+          >
+            Comece agora
+          </a>
+          
+          <a
+            href="#destaque"
+            onClick={(e) => handleScrollToSection(e, 'destaque')}
+            className="w-full sm:w-auto px-8 py-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 text-slate-300 font-semibold rounded-xl transition-all duration-200 text-center cursor-pointer transform hover:-translate-y-0.5"
+          >
+            Saber mais
+          </a>
         </div>
       </div>
     </section>
